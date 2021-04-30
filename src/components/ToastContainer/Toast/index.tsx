@@ -20,7 +20,7 @@ const icons = {
   success: <FiCheckCircle size={24} />,
 };
 
-const Toast: React.FC = ({ message }) => {
+const Toast: React.FC<ToastProps> = ({ message }) => {
   const { removeToast } = useToast();
 
   useEffect(() => {
