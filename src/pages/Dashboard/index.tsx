@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiPower, FiClock } from 'react-icons/fi';
 
 import logoImg from '../../assets/logo.svg';
@@ -12,10 +12,14 @@ import {
   Content,
   Schedule,
   NextAppointment,
+  Section,
+  Appointment,
   Calendar,
 } from './styles';
 
 const Dashboard: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
   const { signOut, user } = useAuth();
 
   return (
@@ -26,6 +30,7 @@ const Dashboard: React.FC = () => {
 
           <Profile>
             <img src={user.avatar_url} alt={user.name} />
+
             <div>
               <span>Bem-vindo,</span>
               <strong>{user.name}</strong>
@@ -41,6 +46,7 @@ const Dashboard: React.FC = () => {
       <Content>
         <Schedule>
           <h1>Horários agendados</h1>
+
           <p>
             <span>Hoje</span>
             <span>Dia 06</span>
@@ -49,6 +55,7 @@ const Dashboard: React.FC = () => {
 
           <NextAppointment>
             <strong>Atendimento a seguir</strong>
+
             <div>
               <img
                 src="https://avatars.githubusercontent.com/u/62365336?v=4"
@@ -56,12 +63,69 @@ const Dashboard: React.FC = () => {
               />
 
               <strong>Pedro Nunes</strong>
+
               <span>
                 <FiClock />
                 08:00
               </span>
             </div>
           </NextAppointment>
+
+          <Section>
+            <strong>Manhã</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars.githubusercontent.com/u/62365336?v=4"
+                  alt="Pedro Nunes"
+                />
+
+                <strong>Pedro Nunes</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars.githubusercontent.com/u/62365336?v=4"
+                  alt="Pedro Nunes"
+                />
+
+                <strong>Pedro Nunes</strong>
+              </div>
+            </Appointment>
+          </Section>
+
+          <Section>
+            <strong>Tarde</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars.githubusercontent.com/u/62365336?v=4"
+                  alt="Pedro Nunes"
+                />
+
+                <strong>Pedro Nunes</strong>
+              </div>
+            </Appointment>
+          </Section>
         </Schedule>
         <Calendar />
       </Content>
