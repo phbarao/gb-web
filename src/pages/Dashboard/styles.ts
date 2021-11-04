@@ -178,9 +178,7 @@ export const Appointment = styled.div`
   display: flex;
   align-items: center;
 
-  & + div {
-    margin-top: 16px;
-  }
+  margin-top: 16px;
 
   span {
     margin-left: auto;
